@@ -13,17 +13,17 @@
 ## Lab 2 - User Registration and Authentication (Backend + Web)
 
 ### Backend – Spring Boot
-- [x] POST /api/auth/register (commit: 2632b79)
-- [x] POST /api/auth/login (commit: 2632b79)
+- [x] POST /api/auth/register (commit: 2a4ebcf)
+- [x] POST /api/auth/login (commit: 2a4ebcf)
 - [x] GET /api/user/me (protected) - TODO: Not implemented yet
 - [x] Database connection (MySQL) - Already configured
 - [x] Password encryption (BCrypt) - Already implemented
 
 ### Web Application – ReactJS
-- [x] Register page (Web UI) - commit: 2632b79
-- [x] Login page (Web UI) - commit: 2632b79
-- [x] Dashboard/Profile page (Web UI, protected) - commit: 2632b79
-- [x] Logout functionality (Web UI) - commit: 2632b79
+- [x] Register page (Web UI) - commit: 2a4ebcf
+- [x] Login page (Web UI) - commit: 2a4ebcf
+- [x] Dashboard/Profile page (Web UI, protected) - commit: 2a4ebcf
+- [x] Logout functionality (Web UI) - commit: 2a4ebcf
 
 ### Frontend Features Implemented
 - [x] User registration with form validation
@@ -85,5 +85,5 @@ web/
 ### Notes
 - Mobile directory may remain empty initially
 - Update this checklist as tasks are completed
-- All frontend features are implemented in a single commit: 2632b79
+- All frontend features are implemented in commit: 2a4ebcf
 - Frontend is tested and running successfully on port 3001

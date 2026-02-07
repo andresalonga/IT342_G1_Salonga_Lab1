@@ -1,89 +1,91 @@
 # Task Checklist
 
-## Lab 1 - Project Setup
-
-### Directory Structure
-- [x] Create `/web` directory
-- [x] Create `/backend` directory
-- [x] Create `/mobile` directory
-- [x] Create `/docs` directory
-- [x] Create `README.md`
-- [x] Create `TASK_CHECKLIST.md`
-
 ## Lab 2 - User Registration and Authentication (Backend + Web)
 
-### Backend – Spring Boot
+### DONE
+
+#### Backend – Spring Boot
+- [x] POST /api/auth/register (commit: 747394e)
+- [x] POST /api/auth/login (commit: 747394e)
+- [x] GET /api/user/me (protected) - Not implemented yet
+- [x] Database connection (MySQL) (commit: 222a542)
+- [x] Password encryption (BCrypt) (commit: 2a4ebcf)
+
+#### Web Application – ReactJS
+- [x] Register page (Web UI) (commit: 2a4ebcf)
+- [x] Login page (Web UI) (commit: 2a4ebcf)
+- [x] Dashboard/Profile page (Web UI, protected) (commit: 2a4ebcf)
+- [x] Logout functionality (Web UI) (commit: 2a4ebcf)
+
+#### Frontend Features Implemented
+- [x] User registration with form validation (commit: 2a4ebcf)
+- [x] User login with token storage (commit: 2a4ebcf)
+- [x] Protected route for dashboard (commit: 2a4ebcf)
+- [x] Logout functionality (commit: 2a4ebcf)
+- [x] Route guarding (commit: 2a4ebcf)
+- [x] Error handling and user feedback (commit: 2a4ebcf)
+- [x] Responsive UI design (commit: 2a4ebcf)
+
+#### API Integration
 - [x] POST /api/auth/register (commit: 2a4ebcf)
 - [x] POST /api/auth/login (commit: 2a4ebcf)
-- [x] GET /api/user/me (protected) - TODO: Not implemented yet
-- [x] Database connection (MySQL) - Already configured
-- [x] Password encryption (BCrypt) - Already implemented
+- [x] GET /api/user/me - Not implemented yet
 
-### Web Application – ReactJS
-- [x] Register page (Web UI) - commit: 2a4ebcf
-- [x] Login page (Web UI) - commit: 2a4ebcf
-- [x] Dashboard/Profile page (Web UI, protected) - commit: 2a4ebcf
-- [x] Logout functionality (Web UI) - commit: 2a4ebcf
+#### Project Setup
+- [x] Create /web directory (commit: 4b41cfd)
+- [x] Create /backend directory (commit: cf2d6ef)
+- [x] Create /mobile directory (commit: 7a9cda4)
+- [x] Create /docs directory (commit: 7a9cda4)
+- [x] Create README.md (commit: 4b41cfd)
+- [x] Create TASK_CHECKLIST.md (commit: 7a9cda4)
 
-### Frontend Features Implemented
-- [x] User registration with form validation
-- [x] User login with token storage
-- [x] Protected route for dashboard
-- [x] Logout functionality
-- [x] Route guarding (redirect unauthenticated users to login)
-- [x] Auto-redirect authenticated users away from login/register pages
-- [x] Error handling and user feedback
-- [x] Responsive UI design
+#### Backend Setup
+- [x] Set up Spring Boot project (commit: cf2d6ef)
+- [x] Add User entity (commit: ae8b86f)
+- [x] Add UserRepository (commit: 7a06735)
+- [x] Add AuthController (commit: 747394e)
+- [x] Add BCrypt configuration (commit: 2a4ebcf)
+- [x] Connect to MySQL database (commit: 222a542)
 
-### Frontend File Structure
-```
-web/
-├── src/
-│   ├── components/
-│   │   └── ProtectedRoute.js
-│   ├── context/
-│   │   └── AuthContext.js
-│   ├── pages/
-│   │   ├── Register.js
-│   │   ├── Login.js
-│   │   ├── Dashboard.js
-│   │   ├── Auth.css
-│   │   └── Dashboard.css
-│   ├── services/
-│   │   └── api.js
-│   ├── App.js
-│   └── index.js
-```
+#### Web Setup
+- [x] Set up React project (commit: 4b41cfd)
+- [x] Add react-router-dom (commit: 2a4ebcf)
+- [x] Add axios (commit: 2a4ebcf)
+- [x] Create project structure (commit: 2a4ebcf)
+- [x] Create AuthContext (commit: 2a4ebcf)
+- [x] Create API service (commit: 2a4ebcf)
+- [x] Create ProtectedRoute component (commit: 2a4ebcf)
+- [x] Create Register page (commit: 2a4ebcf)
+- [x] Create Login page (commit: 2a4ebcf)
+- [x] Create Dashboard page (commit: 2a4ebcf)
+- [x] Configure routing (commit: 2a4ebcf)
+- [x] Add styling (commit: 2a4ebcf)
 
-### API Integration
-- [x] POST /api/auth/register - Register new user
-- [x] POST /api/auth/login - Login user and get token
-- [ ] GET /api/user/me - Get user profile (TODO)
+#### Documentation
+- [x] Document API endpoints (commit: 4a65f70)
+- [x] Document project architecture (commit: 4a65f70)
+- [x] Add usage instructions (commit: 4a65f70)
+- [x] Update TASK_CHECKLIST.md (commit: 4a65f70)
 
-### Development Phases
-- [x] **Web Development**
-  - [x] Set up web project structure
-  - [x] Implement frontend components
-  - [x] Add authentication context
-  - [x] Implement routing and protection
+### IN-PROGRESS
 
-- [ ] **Backend Development**
-  - [x] Set up backend API structure
-  - [x] Implement server logic
-  - [ ] Add GET /api/user/me endpoint
+- [ ] Update FRS PDF with ERD, UML diagrams, and Web UI screenshots
+- [ ] Implement GET /api/user/me endpoint (backend)
 
-- [ ] **Mobile Development**
+### TODO
+
+- [ ] Mobile Development
   - [ ] Set up mobile project structure
   - [ ] Implement mobile components
-
-- [x] **Documentation**
-  - [x] Document API endpoints
-  - [x] Document project architecture
-  - [x] Add usage instructions
-  - [ ] Update FRS PDF with ERD, UML diagrams, and Web UI screenshots
+  - [ ] Connect to backend API
+- [ ] Take screenshots of Web UI for documentation
+  - [ ] Register page screenshot
+  - [ ] Login page screenshot
+  - [ ] Dashboard/Profile page screenshot
+  - [ ] Logout functionality screenshot
 
 ### Notes
 - Mobile directory may remain empty initially
-- Update this checklist as tasks are completed
-- All frontend features are implemented in commit: 2a4ebcf
+- Frontend features are implemented in commit: 2a4ebcf
 - Frontend is tested and running successfully on port 3001
+- All frontend files are in the web/ directory

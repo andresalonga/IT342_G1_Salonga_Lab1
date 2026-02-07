@@ -12,19 +12,19 @@
 - [x] Password encryption (BCrypt) (commit: 2a4ebcf)
 
 #### Web Application – ReactJS
-- [x] Register page (Web UI) (commit: 2a4ebcf)
-- [x] Login page (Web UI) (commit: 2a4ebcf)
-- [x] Dashboard/Profile page (Web UI, protected) (commit: 2a4ebcf)
-- [x] Logout functionality (Web UI) (commit: 2a4ebcf)
+- [x] Register page (Web UI) (commit: 15978dd)
+- [x] Login page (Web UI) (commit: 15978dd)
+- [x] Dashboard/Profile page (Web UI, protected) (commit: 15978dd)
+- [x] Logout functionality (Web UI) (commit: 15978dd)
 
 #### Frontend Features Implemented
-- [x] User registration with form validation (commit: 2a4ebcf)
-- [x] User login with token storage (commit: 2a4ebcf)
-- [x] Protected route for dashboard (commit: 2a4ebcf)
-- [x] Logout functionality (commit: 2a4ebcf)
-- [x] Route guarding (commit: 2a4ebcf)
-- [x] Error handling and user feedback (commit: 2a4ebcf)
-- [x] Responsive UI design (commit: 2a4ebcf)
+- [x] User registration with form validation (commit: 15978dd)
+- [x] User login with token storage (commit: 15978dd)
+- [x] Protected route for dashboard (commit: 15978dd)
+- [x] Logout functionality (commit: 15978dd)
+- [x] Route guarding (commit: 15978dd)
+- [x] Error handling and user feedback (commit: 15978dd)
+- [x] Responsive UI design (commit: 15978dd)
 
 #### API Integration
 - [x] POST /api/auth/register (commit: 2a4ebcf)
@@ -86,6 +86,6 @@
 
 ### Notes
 - Mobile directory may remain empty initially
-- Frontend features are implemented in commit: 2a4ebcf
+- Frontend features are implemented in commit: 15978dd
 - Frontend is tested and running successfully on port 3001
 - All frontend files are in the web/ directory

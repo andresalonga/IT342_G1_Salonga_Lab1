@@ -13,16 +13,27 @@ export const AuthProvider = ({ children }) => {
     const storedToken = localStorage.getItem('token');
     
     if (storedUser && storedToken) {
-      setUser(JSON.parse(storedUser));
+      try {
+        setUser(JSON.parse(storedUser));
+      } catch (e) {
+        // If parsing fails, clear invalid data
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
+      }
       setToken(storedToken);
     }
     setLoading(false);
   }, []);
 
   const login = (userData, authToken) => {
-    setUser(userData);
+    // Ensure userData has firstName
+    const processedUserData = {
+      ...userData,
+      firstName: userData.firstName || userData.email?.split('@')[0] || 'User'
+    };
+    setUser(processedUserData);
     setToken(authToken);
-    localStorage.setItem('user', JSON.stringify(userData));
+    localStorage.setItem('user', JSON.stringify(processedUserData));
     localStorage.setItem('token', authToken);
   };
 
@@ -33,12 +44,19 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('token');
   };
 
+  const updateUser = (updates) => {
+    const updatedUser = { ...user, ...updates };
+    setUser(updatedUser);
+    localStorage.setItem('user', JSON.stringify(updatedUser));
+  };
+
   const value = {
     user,
     token,
     loading,
     login,
     logout,
+    updateUser,
     isAuthenticated: !!token
   };
 

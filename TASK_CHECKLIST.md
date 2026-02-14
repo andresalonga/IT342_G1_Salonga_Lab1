@@ -69,20 +69,19 @@
 
 ### IN-PROGRESS
 
-- [ ] Update FRS PDF with ERD, UML diagrams, and Web UI screenshots
-- [ ] Implement GET /api/user/me endpoint (backend)
+- [X] Update FRS PDF with ERD, UML diagrams, and Web UI screenshots
+- [X] Implement GET /api/user/me endpoint (backend)
 
 ### TODO
 
-- [ ] Mobile Development
-  - [ ] Set up mobile project structure
+- [X] Mobile Development
+  - [X] Set up mobile project structure
   - [ ] Implement mobile components
   - [ ] Connect to backend API
-- [ ] Take screenshots of Web UI for documentation
-  - [ ] Register page screenshot
-  - [ ] Login page screenshot
-  - [ ] Dashboard/Profile page screenshot
-  - [ ] Logout functionality screenshot
+- [X] Take screenshots of Web UI for documentation
+  - [X] Register page screenshot
+  - [X] Login page screenshot
+  - [X] Dashboard/Profile page screenshot
 
 ### Notes
 - Mobile directory may remain empty initially

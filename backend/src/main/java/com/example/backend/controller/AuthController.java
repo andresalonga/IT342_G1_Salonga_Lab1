@@ -40,9 +40,11 @@ public class AuthController {
         // Save user
         userRepository.save(user);
 
-        Map<String, String> response = new HashMap<>();
+        Map<String, Object> response = new HashMap<>();
         response.put("message", "User registered successfully");
         response.put("email", user.getEmail());
+        response.put("firstName", user.getFirstName() != null ? user.getFirstName() : "");
+        response.put("lastName", user.getLastName() != null ? user.getLastName() : "");
 
         return ResponseEntity.ok(response);
     }
@@ -70,6 +72,9 @@ public class AuthController {
             response.put("token", "LOGIN_SUCCESS_TOKEN");
             response.put("email", dbUser.getEmail());
             response.put("userId", dbUser.getId());
+            response.put("firstName", dbUser.getFirstName() != null ? dbUser.getFirstName() : "");
+            response.put("lastName", dbUser.getLastName() != null ? dbUser.getLastName() : "");
+            response.put("createdAt", dbUser.getCreatedAt() != null ? dbUser.getCreatedAt().toString() : "");
             return ResponseEntity.ok(response);
         } else {
             Map<String, String> response = new HashMap<>();

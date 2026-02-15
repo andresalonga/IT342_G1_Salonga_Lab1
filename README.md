@@ -248,7 +248,7 @@ See [TASK_CHECKLIST.md](TASK_CHECKLIST.md) for detailed progress tracking.
 
 ## Authors
 
-- **IT342 Group 1** - Initial work
+- **Salonga, Andre D.** - IT342 G1
 
 ## License
 

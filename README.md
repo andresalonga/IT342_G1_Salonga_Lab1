@@ -2,7 +2,7 @@
 
 ## Project Description
 
-This is a User Registration and Authentication system built as a full-stack application. The system includes a Spring Boot backend API and a ReactJS web frontend. It provides secure user authentication with password encryption using BCrypt and JWT-like token management.
+This is a User Registration and Authentication system built as a full-stack application. The system includes a Spring Boot backend API, a ReactJS web frontend, and an Android Kotlin mobile app. It provides secure user authentication with password encryption using BCrypt and token management.
 
 ### Features
 - User registration with email and password
@@ -10,7 +10,8 @@ This is a User Registration and Authentication system built as a full-stack appl
 - Protected dashboard/profile page
 - Secure password storage (BCrypt encrypted)
 - Route protection for authenticated users
-- Responsive UI design
+- Responsive UI design (Web)
+- Material Design 3 UI (Mobile)
 
 ## Technologies Used
 
@@ -22,14 +23,18 @@ This is a User Registration and Authentication system built as a full-stack appl
 - **BCrypt** - Password encryption
 - **Maven** - Build tool
 
-### Frontend
+### Web Frontend
 - **ReactJS** - Frontend framework
 - **React Router v6** - Routing library
 - **Axios** - HTTP client
-- **CSS3** - Styling
+- **Tailwind CSS** - Styling
 
-### Mobile (Coming Soon)
-- **React Native** - Mobile framework (future implementation)
+### Mobile App
+- **Kotlin** - Programming language
+- **Android** - Mobile platform
+- **Retrofit** - HTTP client
+- **Material Design 3** - UI components
+- **Coroutines** - Async operations
 
 ## Project Structure
 
@@ -56,8 +61,15 @@ IT342_G1_Salonga_Lab1/
 │   │   ├── App.js
 │   │   └── index.js
 │   └── package.json
-├── mobile/               # React Native mobile (future)
-├── docs/                 # Documentation
+├── mobile/               # Android Kotlin mobile app
+│   ├── app/
+│   │   ├── src/
+│   │   │   └── main/
+│   │   │       ├── java/com/example/salongalab1/
+│   │   │       └── res/
+│   │   └── build.gradle.kts
+│   └── gradle/
+├── docs/                 # Documentation (FRS)
 ├── README.md
 └── TASK_CHECKLIST.md
 ```
@@ -68,9 +80,9 @@ IT342_G1_Salonga_Lab1/
 
 | Method | Endpoint | Description | Request Body | Response |
 |--------|----------|-------------|--------------|----------|
-| POST | `/api/auth/register` | Register new user | `{ "email": "...", "password": "..." }` | `{ "message": "...", "email": "..." }` |
-| POST | `/api/auth/login` | User login | `{ "email": "...", "password": "..." }` | `{ "message": "...", "token": "...", "email": "...", "userId": ... }` |
-| GET | `/api/user/me` | Get user profile (protected) | N/A | `{ "email": "...", "id": ... }` |
+| POST | `/api/auth/register` | Register new user | `{ "email": "...", "password": "...", "firstName": "...", "lastName": "..." }` | `{ "message": "...", "email": "...", "firstName": "...", "lastName": "..." }` |
+| POST | `/api/auth/login` | User login | `{ "email": "...", "password": "..." }` | `{ "message": "...", "token": "...", "email": "...", "userId": ..., "firstName": "...", "lastName": "...", "createdAt": "..." }` |
+| POST | `/api/auth/logout` | User logout | N/A | `{ "message": "...", "loggedOut": true }` |
 
 ### Request/Response Examples
 
@@ -81,7 +93,9 @@ Content-Type: application/json
 
 {
   "email": "user@example.com",
-  "password": "password123"
+  "password": "password123",
+  "firstName": "John",
+  "lastName": "Doe"
 }
 ```
 
@@ -89,7 +103,9 @@ Content-Type: application/json
 ```json
 {
   "message": "User registered successfully",
-  "email": "user@example.com"
+  "email": "user@example.com",
+  "firstName": "John",
+  "lastName": "Doe"
 }
 ```
 
@@ -110,7 +126,10 @@ Content-Type: application/json
   "message": "Login successful",
   "token": "LOGIN_SUCCESS_TOKEN",
   "email": "user@example.com",
-  "userId": 1
+  "userId": 1,
+  "firstName": "John",
+  "lastName": "Doe",
+  "createdAt": "2024-01-01T00:00:00"
 }
 ```
 
@@ -125,27 +144,21 @@ Content-Type: application/json
 ### Database Setup
 1. Start XAMPP Control Panel
 2. Start MySQL service
-3. Create database named `backend` (or as configured in application.properties)
+3. Create database named `auth_db`
 
 ### Configuration
 Update `backend/src/main/resources/application.properties`:
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/backend
+spring.datasource.url=jdbc:mysql://localhost:3306/auth_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
 spring.datasource.username=root
-spring.dassword=
+spring.datasource.password=
 spring.jpa.hibernate.ddl-auto=update
 ```
 
 ### Run Backend
 1. Open terminal in `backend/` directory
-2. Run: `mvn spring-boot:run`
+2. Run: `./mvnw spring-boot:run` (Windows: `mvnw.cmd spring-boot:run`)
 3. Backend will start on `http://localhost:8080`
-
-### Alternative (using Maven wrapper)
-```bash
-cd backend
-./mvnw spring-boot:run
-```
 
 ## Steps to Run Web App
 
@@ -175,15 +188,37 @@ The built files will be in the `build/` directory.
 
 ## Steps to Run Mobile App
 
-### ⚠️ Note
-Mobile app is NOT required for this submission and will be implemented in the next laboratory session.
+### Prerequisites
+- Android Studio (with Kotlin plugin)
+- Android SDK
+- Physical Android device or Emulator
 
-### Future Implementation
-- React Native mobile application
-- Connection to same backend API
-- Similar authentication features
+### Run Mobile App
+1. Open the `mobile/` directory in Android Studio
+2. Wait for Gradle sync to complete
+3. Click the Run button or press `Shift + F10`
+4. Select an emulator or connected device
 
-## Frontend Pages
+### Important Notes
+- Mobile app connects to backend at `http://10.0.2.2:8080` (Android emulator)
+- For physical device, use your computer's IP address instead
+- Make sure backend is running before testing mobile app
+
+## Mobile App Features
+
+### Screens
+- **Register Screen** - User registration with validation
+- **Login Screen** - User login with session management
+- **Dashboard Screen** - Profile display with logout option
+
+### UI Features
+- Material Design 3 styling
+- Password visibility toggle
+- Real-time input validation (green/red border colors)
+- Loading indicators during API calls
+- Error handling with user feedback
+
+## Frontend Pages (Web)
 
 ### Register Page
 - URL: `/register`
@@ -204,7 +239,7 @@ Mobile app is NOT required for this submission and will be implemented in the ne
 
 - **Password Encryption**: All passwords are encrypted using BCrypt before storage
 - **Route Protection**: Dashboard is protected and only accessible with valid token
-- **Token Management**: Tokens stored in localStorage for session persistence
+- **Token Management**: Tokens stored in localStorage (Web) / SharedPreferences (Mobile) for session persistence
 - **Input Validation**: Form validation on frontend before API calls
 
 ## Development Progress

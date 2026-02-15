@@ -88,22 +88,15 @@
 - [x] POST /api/auth/logout endpoint (commit: f37ce9e)
 
 #### Documentation (FRS)
-- [ ] Update FRS PDF with Web UI screenshots
-- [ ] Update FRS PDF with Mobile UI screenshots
-- [ ] Update FRS PDF with any diagram revisions
-
-### IN-PROGRESS
-
-- [ ] FRS Documentation
-
-### TODO
-
-- [ ] Complete FRS documentation with screenshots
+- [x] Update FRS PDF with Web UI screenshots (commit: 6c41be6)
+- [x] Update FRS PDF with Mobile UI screenshots (commit: 6c41be6)
+- [x] Update FRS PDF with any diagram revisions (commit: 6c41be6)
 
 ---
 
 ### Notes
-- Mobile directory now contains complete Android authentication app
+- ✅ Lab 2 and Lab 3 COMPLETE
+- Mobile directory contains complete Android authentication app
 - Frontend features are implemented in commit: 15978dd
 - Frontend is tested and running successfully on port 3001
 - Backend running on port 8080

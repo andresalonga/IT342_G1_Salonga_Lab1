@@ -82,4 +82,28 @@ public class AuthController {
             return ResponseEntity.badRequest().body(response);
         }
     }
+    
+    /**
+     * User Logout Endpoint
+     * POST /api/auth/logout
+     * 
+     * Note: Since we're using token-based auth without JWT,
+     * the actual token invalidation is handled client-side.
+     * This endpoint provides a consistent API for logout.
+     */
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(@RequestHeader(value = "Authorization", required = false) String authHeader) {
+        Map<String, Object> response = new HashMap<>();
+        
+        // In a full JWT implementation, you would:
+        // 1. Extract the token from Authorization header
+        // 2. Add it to a blacklist in Redis/database
+        // 3. Return success
+        
+        // For this implementation, we just acknowledge the logout request
+        response.put("message", "Logout successful");
+        response.put("loggedOut", true);
+        
+        return ResponseEntity.ok(response);
+    }
 }

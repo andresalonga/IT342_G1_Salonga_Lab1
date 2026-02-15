@@ -7,7 +7,6 @@
 #### Backend – Spring Boot
 - [x] POST /api/auth/register (commit: 747394e)
 - [x] POST /api/auth/login (commit: 747394e)
-- [x] GET /api/user/me (protected) - Not implemented yet
 - [x] Database connection (MySQL) (commit: 222a542)
 - [x] Password encryption (BCrypt) (commit: 2a4ebcf)
 
@@ -29,7 +28,6 @@
 #### API Integration
 - [x] POST /api/auth/register (commit: 2a4ebcf)
 - [x] POST /api/auth/login (commit: 2a4ebcf)
-- [x] GET /api/user/me - Not implemented yet
 
 #### Project Setup
 - [x] Create /web directory (commit: 4b41cfd)
@@ -67,24 +65,46 @@
 - [x] Add usage instructions (commit: 4a65f70)
 - [x] Update TASK_CHECKLIST.md (commit: 4a65f70)
 
+---
+
+## Lab 3 - Mobile Application + Finalization
+
+### DONE
+
+#### Mobile Application – Android Kotlin
+- [x] Set up mobile project structure (commit: 0eda989)
+- [x] Implement Register screen (commit: 0eda989)
+- [x] Implement Login screen (commit: 0eda989)
+- [x] Implement Dashboard/Profile screen (commit: 0eda989)
+- [x] Implement Logout functionality (commit: 0eda989)
+- [x] Connect to backend API (commit: 0eda989)
+- [x] Material Design 3 UI (commit: 0eda989)
+- [x] Input validation with visual feedback (commit: 0eda989)
+- [x] Password visibility toggle (commit: 0eda989)
+- [x] Session management with SharedPreferences (commit: 0eda989)
+- [x] Network security configuration for HTTP (commit: 0eda989)
+
+#### Backend Finalization
+- [x] POST /api/auth/logout endpoint (commit: f37ce9e)
+
+#### Documentation (FRS)
+- [ ] Update FRS PDF with Web UI screenshots
+- [ ] Update FRS PDF with Mobile UI screenshots
+- [ ] Update FRS PDF with any diagram revisions
+
 ### IN-PROGRESS
 
-- [X] Update FRS PDF with ERD, UML diagrams, and Web UI screenshots
-- [X] Implement GET /api/user/me endpoint (backend)
+- [ ] FRS Documentation
 
 ### TODO
 
-- [X] Mobile Development
-  - [X] Set up mobile project structure
-  - [ ] Implement mobile components
-  - [ ] Connect to backend API
-- [X] Take screenshots of Web UI for documentation
-  - [X] Register page screenshot
-  - [X] Login page screenshot
-  - [X] Dashboard/Profile page screenshot
+- [ ] Complete FRS documentation with screenshots
+
+---
 
 ### Notes
-- Mobile directory may remain empty initially
+- Mobile directory now contains complete Android authentication app
 - Frontend features are implemented in commit: 15978dd
 - Frontend is tested and running successfully on port 3001
-- All frontend files are in the web/ directory
+- Backend running on port 8080
+- Mobile app connects to backend at http://10.0.2.2:8080 (emulator)
